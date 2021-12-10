@@ -1,50 +1,70 @@
 package com.fatec.Fluxo_de_Caixa.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-public class category implements Serializable {
+public class Product implements Serializable {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Long id;
-	private String name;
+	private Long  id;
+	private  String name;
+	private Double price;
 	
-	@JsonIgnore
-	private List<Product>products  = new ArrayList<>();
 	
-	public category(Long id, String name) {
+	private category category;
+	
+	public Product (){
+		
+	}
+	public Product(Long id, String name, Double price, com.fatec.Fluxo_de_Caixa.entities.category category) {
 		super();
 		this.id = id;
 		this.name = name;
+		this.price = price;
+		this.category = category;
 	}
 
-	
+
 	public Long getId() {
 		return id;
 	}
+
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
+
 	public String getName() {
 		return name;
 	}
+
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	
 
-	public List<Product> getProducts() {
-		return products;
+	public Double getPrice() {
+		return price;
 	}
+
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+
+	public category getCategory() {
+		return category;
+	}
+
+
+	public void setCategory(category category) {
+		this.category = category;
+	}
+
 
 	@Override
 	public int hashCode() {
@@ -54,6 +74,7 @@ public class category implements Serializable {
 		return result;
 	}
 
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -62,7 +83,7 @@ public class category implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		category other = (category) obj;
+		Product other = (Product) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -70,7 +91,5 @@ public class category implements Serializable {
 			return false;
 		return true;
 	}
-
-	
 	
 }
