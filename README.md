@@ -1,6 +1,60 @@
 # FluxoCaixa-Java
 Atividade prática - Programação Orientada à Objeto 
 
+## O que foi feito
+Pelo fato de ser apenas um MVP, criei 3 classes, que posteriormente vi que poderia ter nomeado melhor, mas enfim, as classe são :
+- Category: guarda o tipo/categoria da entrada ou saída do Fluxo de Caixa, seja Combustível, Alimentação, Gás, Investimento, Energia Elétrica
+  - id
+  - name
+- Product: guarda a informação se foi entrada ou saída e o valor, estando com o relacionamento de 1 category pra muitos products
+  -  id
+  -  name
+  -  price
+  -  category_id
+- User: guarda informações do usuário
+  - id
+  - adress
+  - email
+  - name
+  - password
+  - phonenumber
+
+Ao iniciar a aplicação o Spring rodará na porta 8080 do localhost:
+
+http://localhost:8080
+
+
+Fazendo um teste inicial de requisição na rota 'users' temos: 
+
+http://localhost:8080/users
+
+
+![image](https://user-images.githubusercontent.com/62885555/145514841-1ca812be-16ee-45f8-9b99-43a16fa69ea6.png)
+
+
+
+Utilizei JPA com o h2-console criando um banco de dados apenas em memória por se tratar de um MVP, sendo a prova de conceito aprovada, provalmente mudaria pra um postgres ou um MySQL 
+  - Para acesar o banco ao rodar o projeto : http://localhost:8080/h2-console
+  - Ao acessar o link colocar a seguinte URL: jdbc:h2:mem:testdb
+  - User: sa 
+  - Password:
+ 
+ 
+ Você deverá ver uma tela assim:
+ 
+ ![image](https://user-images.githubusercontent.com/62885555/145514458-97ab75b1-460e-4d6d-b423-904b1d9b4bfd.png)
+ 
+ No command Runner da aplicação eu setei categorias e produtos, ja incluindo relacionamentos, ao rodar a aplicação, o banco de dados fica da seguinte forma: 
+ 
+ ![image](https://user-images.githubusercontent.com/62885555/145514583-4933b258-5f55-428c-851d-765def8707bd.png)
+ 
+ 
+## Próximos Passos
+
+Para continuar essa aplicação, devo criar os login, e de fato os cálculos do fluxo de caixa com suas respectivas validações e associações
+
+# Escopo do Projeto
+
 ## Programas utilizados:
   - Eclipse IDE.
   - Plataforma Java SE.
