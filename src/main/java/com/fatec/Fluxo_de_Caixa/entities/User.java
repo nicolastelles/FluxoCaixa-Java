@@ -7,6 +7,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -25,9 +29,10 @@ public class User implements Serializable {
 	private String address;
 	
 	
+	
 	@JsonIgnore
-
 	public User() {
+		
 	}
 	
 
@@ -120,6 +125,15 @@ public class User implements Serializable {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+
+
+
+	@PostMapping
+    @Transactional
+    @ResponseStatus(HttpStatus.CREATED)
+	public void createCliente(User user) {
+		 user.createCliente(user);
 	}
 
 	

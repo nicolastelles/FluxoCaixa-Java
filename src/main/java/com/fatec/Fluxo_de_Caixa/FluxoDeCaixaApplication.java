@@ -37,8 +37,8 @@ public class FluxoDeCaixaApplication implements CommandLineRunner{
 		User user1 = new User(null,"Nicolas","nico-telles@hotmail.com","1234","981819292","Rua dos Aprovados - n°10");
 		User user2 = new User(null,"Gerson","gerson@fatec.com","1234","977777777","Avenida dos Aprovados - n°100");
 		
-		category cat1 = new category(null, "Cartão");
-		category cat2 = new category(null, "Dinheiro");
+		category cat1 = new category(null, "Investimento");
+		category cat2 = new category(null, "Combustível");
 		
 		
 		
